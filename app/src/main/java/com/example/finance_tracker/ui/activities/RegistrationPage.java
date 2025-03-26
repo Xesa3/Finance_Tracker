@@ -37,7 +37,7 @@ public class RegistrationPage extends AppCompatActivity {
         transaction.commit();
     }
 
-    public void clickLogin(View view){
+    public void clickLogin(View view) {
         Intent intent = new Intent(this, HomePage.class);
         startActivity(intent);
     }
