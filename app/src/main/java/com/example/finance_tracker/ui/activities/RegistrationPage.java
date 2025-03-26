@@ -42,4 +42,6 @@ public class RegistrationPage extends AppCompatActivity {
         startActivity(intent);
     }
 
+    
+
 }
