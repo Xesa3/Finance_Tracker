@@ -12,13 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.view.View;
-
+import android.widget.EditText;
+import android.widget.Button;
 import com.example.finance_tracker.R;
 
-public class RegistrationPage extends AppCompatActivity {
+import com.example.finance_tracker.ui.fragments.LoginFragmentEmail;
+import com.example.finance_tracker.ui.fragments.LoginFragmentPhone;
+
+public class RegistrationPage extends AppCompatActivity
+        implements LoginFragmentEmail.OnEmailSelectedListener, LoginFragmentPhone.OnPhoneSelectedListener
+{
+    private Button buttonLogin; // определяем кнопку
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_registration_page);
@@ -28,19 +38,51 @@ public class RegistrationPage extends AppCompatActivity {
             return insets;
         });
 
+        //Находим ее по id и запрещаем ее нажатие
+        buttonLogin = findViewById(R.id.buttonLogin);
+        buttonLogin.setEnabled(false);
+
+
+        //Загрузка фрагмента с логином
+        if (savedInstanceState == null) {
+            // Загружаем LoginFragment, если состояние не сохранено
+            loadFragment(new LoginFragmentEmail());
+        }
+
 
     }
+
+    @Override
+    public void onEmailSelected(String email, String password) {
+        // Получаем данные из фрагмента
+        if(!email.isEmpty() && !password.isEmpty()){
+            buttonLogin.setEnabled(true);
+        }
+
+    }
+
+    @Override
+    public void onPhoneSelected(String phone,String password){
+        if(!phone.isEmpty() && !password.isEmpty()){
+            buttonLogin.setEnabled(true);
+        }
+    }
+
+
     private void loadFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.container, fragment); // Меняем контейнер на фрагмент
-        transaction.commit();
+        FragmentManager fragmentManager = getSupportFragmentManager(); //Получаем фрагмент менеджер который управляет фрагментами
+        FragmentTransaction transaction = fragmentManager.beginTransaction(); //начинаем операцию замены фрагмента
+        transaction.replace(R.id.container1, fragment); // заменяет текущий фрагмент в container1 на заданный fragment
+        transaction.commit(); // Применяет замену
     }
 
-    public void clickLogin(View view) {
-        Intent intent = new Intent(this, HomePage.class);
-        startActivity(intent);
+    public void clickLogin(View view) { //Нажатие на кнопку логин и переход к главному меню
+            Intent intent = new Intent(this, HomePage.class);
+            startActivity(intent);
+            finish();
     }
+
+
 
     
 
