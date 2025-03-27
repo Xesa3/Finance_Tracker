@@ -22,6 +22,7 @@ import com.example.finance_tracker.R;
 
 public class LoginFragmentPhone extends Fragment {
 
+    //Создаем интерфейс для передачи данных из фрагмента в активити
     private OnPhoneSelectedListener mListener;
     public interface OnPhoneSelectedListener{
         void onPhoneSelected(String phone,String password);
@@ -35,39 +36,16 @@ public class LoginFragmentPhone extends Fragment {
         if(getActivity() instanceof OnPhoneSelectedListener){
             mListener = (OnPhoneSelectedListener) getActivity();
         }
+
+
         Button button6 = view.findViewById(R.id.button6);
         EditText textPhone = view.findViewById(R.id.editTextPhone);
         EditText textPassword = view.findViewById(R.id.editTextTextPassword);
 
-
-        button6.setOnClickListener(v -> {
-            String phone = textPhone.getText().toString();
-            String pass = textPassword.getText().toString();
-
-            if(mListener != null){
-                if(phone.isEmpty() && pass.isEmpty()){
-                    textPassword.setHint("Пожалуйста, введите ваш password");
-                    textPassword.setHintTextColor(Color.RED);
-                    textPhone.setHint("Пожалуйста, введите ваш phone");
-                    textPhone.setHintTextColor(Color.RED);
-                } else if (pass.isEmpty()) {
-                    textPassword.setHint("Пожалуйста, введите ваш password");
-                    textPassword.setHintTextColor(Color.RED);
-                }
-                else if (phone.isEmpty()) {
-                    textPhone.setHint("Пожалуйста, введите ваш phone");
-                    textPhone.setHintTextColor(Color.RED);
-                } else{
-                    mListener.onPhoneSelected(phone,pass);
-                }
-            }
-
-        });
+        button6.setOnClickListener(v -> validDateAndSendData(textPhone,textPassword));
 
 
-
-
-        Button emailButton = view.findViewById(R.id.buttonEmail);
+        Button emailButton = view.findViewById(R.id.buttonEmail);//Переход с фрагмент с email
         emailButton.setOnClickListener(v -> openLoginFragmentEmail());
 
         return view;
@@ -86,6 +64,33 @@ public class LoginFragmentPhone extends Fragment {
 
         transaction.add(R.id.container1, emailFragment);
         transaction.commit();
+    }
+
+    //Метод проверки на валидность
+    private void validDateAndSendData(EditText textPhone, EditText textPassword){
+        String email = textPhone.getText().toString();
+        String pass = textPassword.getText().toString();
+
+        boolean isValid = true;
+
+        // Проверка на пустые поля
+        if(email.isEmpty()){
+            textPhone.setHint("Пожалуйста введие ваш phone");
+            textPhone.setHintTextColor(Color.RED);
+            isValid = false;
+        }else{
+            textPhone.setHintTextColor(Color.GRAY);
+        }
+
+        if(pass.isEmpty()){
+            textPassword.setHint("Пожалуйста введие ваш pass");
+            textPassword.setHintTextColor(Color.RED);
+            isValid = false;
+        }
+
+        if(isValid && mListener != null){
+            mListener.onPhoneSelected(email,pass);
+        }
     }
 
 }

@@ -29,38 +29,18 @@ public class LoginFragmentEmail extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login_email, container, false);
 
+        //Этот код проверяет, реализует ли активити, к которой привязан фрагмент, интерфейс OnEmailSelectedListener.
         if(getActivity() instanceof OnEmailSelectedListener){
             mListener = (OnEmailSelectedListener) getActivity();
         }
+
+
         Button button6 = view.findViewById(R.id.button6); // Кнопка со стрелочкой
         EditText textEmail = view.findViewById(R.id.editTextTextEmailAddress);
         EditText textPassword = view.findViewById(R.id.editTextTextPassword);
+//Метод проверяет валидность данных на пустоту и отправляет их в активити(можно отдельно добавить класс для проверки на @ или на спец символы)
+        button6.setOnClickListener(v -> validDateAndSendData(textEmail,textPassword));
 
-
-        button6.setOnClickListener(v -> {
-            String email = textEmail.getText().toString();
-            String pass = textPassword.getText().toString();
-
-            // Проверка на пустые поля
-            if(mListener != null){
-                if(email.isEmpty() && pass.isEmpty()){
-                    textPassword.setHint("Пожалуйста, введите ваш password");
-                    textPassword.setHintTextColor(Color.RED);
-                    textEmail.setHint("Пожалуйста, введите ваш email");
-                    textEmail.setHintTextColor(Color.RED);
-                } else if (pass.isEmpty()) {
-                    textPassword.setHint("Пожалуйста, введите ваш password");
-                    textPassword.setHintTextColor(Color.RED);
-                }
-                else if (email.isEmpty()) {
-                    textEmail.setHint("Пожалуйста, введите ваш email");
-                    textEmail.setHintTextColor(Color.RED);
-                } else{
-                    mListener.onEmailSelected(email,pass);
-                }
-            }
-
-        });
 
         Button phoneButton = view.findViewById(R.id.buttonPhone);
         phoneButton.setOnClickListener(v -> openLoginFragmentPhone()); //Открывает фрагмент с полем для логина через телефон
@@ -77,10 +57,38 @@ public class LoginFragmentEmail extends Fragment {
         Fragment currentFragment = fragmentManager.findFragmentById(R.id.container1);
         if (currentFragment != null) {
             transaction.remove(currentFragment);
-        }
+        } //После этого фрагмент с email будет удален
 
         transaction.add(R.id.container1, phoneFragment);
         transaction.commit();
+    }
+
+
+    //Метод проверки на валидность
+    private void validDateAndSendData(EditText textEmail, EditText textPassword){
+        String email = textEmail.getText().toString();
+        String pass = textPassword.getText().toString();
+
+        boolean isValid = true;
+
+        // Проверка на пустые поля
+        if(email.isEmpty()){
+            textEmail.setHint("Пожалуйста введие ваш email");
+            textEmail.setHintTextColor(Color.RED);
+            isValid = false;
+        }else{
+            textEmail.setHintTextColor(Color.GRAY);
+        }
+
+        if(pass.isEmpty()){
+            textPassword.setHint("Пожалуйста введие ваш pass");
+            textPassword.setHintTextColor(Color.RED);
+            isValid = false;
+        }
+
+        if(isValid && mListener != null){
+            mListener.onEmailSelected(email,pass);
+        }
     }
 
 }

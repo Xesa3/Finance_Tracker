@@ -38,7 +38,7 @@ public class RegistrationPage extends AppCompatActivity
             return insets;
         });
 
-        //Находим ее по id и запрещаем ее нажатие
+        //Находим ее по id и запрещаем ее нажатие до момента пока пользователь не введет корректно данные
         buttonLogin = findViewById(R.id.buttonLogin);
         buttonLogin.setEnabled(false);
 
@@ -52,6 +52,8 @@ public class RegistrationPage extends AppCompatActivity
 
     }
 
+
+//Реализован интерфейс для получения данных из фрагмена с email
     @Override
     public void onEmailSelected(String email, String password) {
         // Получаем данные из фрагмента
@@ -61,6 +63,7 @@ public class RegistrationPage extends AppCompatActivity
 
     }
 
+//Реализован интерфейс для получения данных из фрагмена с phone
     @Override
     public void onPhoneSelected(String phone,String password){
         if(!phone.isEmpty() && !password.isEmpty()){
