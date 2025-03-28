@@ -11,7 +11,7 @@ import androidx.core.view.WindowInsetsCompat;
 import com.example.finance_tracker.R;
 
 public class HomePage extends AppCompatActivity {
-
+// sfdadfs
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
