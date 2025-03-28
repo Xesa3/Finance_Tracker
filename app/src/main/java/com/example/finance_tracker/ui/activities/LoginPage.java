@@ -2,87 +2,100 @@ package com.example.finance_tracker.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
+import android.widget.EditText;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.ViewModelProvider;
-
+import android.view.View;
 import android.widget.Button;
+import com.example.finance_tracker.R;
+import com.example.finance_tracker.ui.fragments.Login.LoginViewModel;
+import androidx.lifecycle.ViewModelProvider;
 import android.widget.Toast;
 
-import com.example.finance_tracker.R;
-import com.example.finance_tracker.ui.fragments.Register.RegisterFragment;
-import com.example.finance_tracker.ui.fragments.Register.RegisterViewModel;
-// Все так же как и в Login Page в плане методов
-public class RegistrationPage extends AppCompatActivity {
+import com.example.finance_tracker.ui.fragments.Login.LoginFragmentEmail;
 
 
-    private RegisterViewModel registerViewModel;
-    private Button buttonSign;
 
+public class LoginPage extends AppCompatActivity
+{
+    private LoginViewModel loginViewModel;
+    private Button buttonLogin; // определяем кнопку
+    private EditText textPhone, textPassword;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_registration_page);
+        setContentView(R.layout.activity_login_page);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
 
-        registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
+        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
-        buttonSign = findViewById(R.id.buttonSign_up);
-        buttonSign.setEnabled(false); // Отключаю кнопку
 
-        registerViewModel.getIsButtonEnabled().observe(this, isEnabled -> {
-            buttonSign.setEnabled(isEnabled); // Активируем кнопку, если данные введены
+        //Находим ее по id и запрещаем ее нажатие до момента пока пользователь не введет корректно данные
+        buttonLogin = findViewById(R.id.buttonLogin);
+        buttonLogin.setEnabled(false);
+
+        loginViewModel.getIsButtonEnabled().observe(this, isEnabled -> {
+            buttonLogin.setEnabled(isEnabled); // Активируем кнопку, если данные введены
         });
 
-        buttonSign.setOnClickListener(v -> { //Действия с активной кнопкой
-            if (Boolean.TRUE.equals(registerViewModel.getIsButtonEnabled().getValue())) {
-                clickSign(v);
+        buttonLogin.setOnClickListener(v -> {
+            if (Boolean.TRUE.equals(loginViewModel.getIsButtonEnabled().getValue())) {
+                clickLogin(v);
             }
             else {
                 Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show();
             }
         });
 
+
         //Загрузка фрагмента с логином
         if (savedInstanceState == null) {
             // Загружаем LoginFragment, если состояние не сохранено
-            loadFragment(new RegisterFragment());
+            loadFragment(new LoginFragmentEmail());
         }
+
+
     }
+
 
 
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager(); //Получаем фрагмент менеджер который управляет фрагментами
         FragmentTransaction transaction = fragmentManager.beginTransaction(); //начинаем операцию замены фрагмента
-        transaction.replace(R.id.container2, fragment); // заменяет текущий фрагмент в container1 на заданный fragment
+        transaction.replace(R.id.container1, fragment); // заменяет текущий фрагмент в container1 на заданный fragment
         transaction.commit(); // Применяет замену
     }
 
-    public void clickSign_in(View view){
-        Intent intent = new Intent(this, LoginPage.class);
+    public void clickLogin(View view) { //Нажатие на кнопку логин и переход к главному меню
+            Intent intent = new Intent(this, HomePage.class);
+            startActivity(intent);
+            finish();
+    }
+
+    public void clickSign_up(View view){
+        Intent intent = new Intent(this, RegistrationPage.class);
         startActivity(intent);
         finish();
     }
 
-    //Надо определится куда потом пользователя кидать
-    //Логиниться или данные запоминаются и он автоматически логинится
-    public void clickSign(View view){
-        Intent intent = new Intent(this, HomePage.class);
-        startActivity(intent);
-        finish();
-    }
+
+
+    
+
 }
