@@ -1,26 +1,52 @@
-package com.example.finance_tracker;
 
-import android.content.Context;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 
-import androidx.test.platform.app.InstrumentationRegistry;
-import androidx.test.ext.junit.runners.AndroidJUnit4;
+public class ExampleInstrumentedTest extends AppCompatActivity {
 
-import org.junit.Test;
-import org.junit.runner.RunWith;
+    private TextInputEditText emailInput, passwordInput;
+    private MaterialButton loginButton;
 
-import static org.junit.Assert.*;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-/**
- * Instrumented test, which will execute on an Android device.
- *
- * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
- */
-@RunWith(AndroidJUnit4.class)
-public class ExampleInstrumentedTest {
-    @Test
-    public void useAppContext() {
-        // Context of the app under test.
-        Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.finance_tracker", appContext.getPackageName());
+        // Инициализация элементов
+        emailInput = findViewById(R.id.emailInput);
+        passwordInput = findViewById(R.id.passwordInput);
+        loginButton = findViewById(R.id.loginButton);
+
+        // Обработчик кнопки входа
+        loginButton.setOnClickListener(v -> attemptLogin());
+
+        // Обработчики кликов по тексту
+        findViewById(R.id.forgotPassword).setOnClickListener(v ->
+                showToast("Password recovery feature coming soon!"));
+
+        findViewById(R.id.signUp).setOnClickListener(v ->
+                showToast("Sign up screen coming soon!"));
+    }
+
+    private void attemptLogin() {
+        String email = emailInput.getText().toString().trim();
+        String password = passwordInput.getText().toString().trim();
+
+        if(email.isEmpty() || password.isEmpty()) {
+            showToast("Please fill all fields");
+        } else {
+            // Здесь должна быть реальная логика авторизации
+            showToast("Login attempt processing...");
+            // startActivity(new Intent(this, HomeActivity.class));
+        }
+    }
+
+    private void showToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
