@@ -6,7 +6,7 @@
     android:background="@color/background_grey"
     android:gravity="center"
     android:orientation="vertical"
-    android:padding="24dp">
+    android:padding="16dp">
 
     <TextView
 
@@ -22,7 +22,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp">
+        android:layout_marginBottom="16dp"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/emailInput"
@@ -60,11 +61,13 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:text="@string/login"
-        android:textColor="@color/very_white" />
+        android:textColor="@color/blackblue"
+        android:backgroundTint="@color/windownotverywhite"
+        android:visibility="visible"/>
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:gravity="center"
         android:orientation="horizontal">
 
