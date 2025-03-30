@@ -16,4 +16,14 @@
     <string name="e_mail_my">e-mail</string>
     <string name="lotus_track">Lotus track</string>
     <string name="hello">Hello!</string>
+    <string name="hello_em">Hello!</string>
+    <string name="lotus_track_em">Lotus track</string>
+    <string name="e_mail_em">e-mail</string>
+    <string name="phone_em">phone</string>
+    <string name="phone_ema">phone</string>
+    <string name="password_ema">password</string>
+    <string name="fogot_em">Fogot</string>
+    <string name="login_ema">Login</string>
+    <string name="no_account_ema">No account?</string>
+    <string name="sing_up_ema">Sing up</string>
 </resources>
