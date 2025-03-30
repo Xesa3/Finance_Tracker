@@ -85,6 +85,7 @@
                 android:background="@android:color/transparent"
                 android:gravity="center"
                 android:text="e-mail"
+                android:textAllCaps="false"
                 android:visibility="visible"
                 android:textColor="@color/blue"
                 android:textSize="14sp">
@@ -101,6 +102,7 @@
                 android:background="@drawable/verywind"
                 android:gravity="center"
                 android:text="phone"
+                android:textAllCaps="false"
                 android:visibility="visible"
                 android:textColor="@color/blackblue"
                 android:textSize="14sp">
@@ -209,6 +211,7 @@
                 android:background="@drawable/verywind"
                 android:backgroundTint="#D9D9D8"
                 android:text="Fogot"
+                android:textAllCaps="false"
                 android:textColor="@color/blackblue"
                 android:textSize="14sp"
                 android:visibility="visible">
@@ -236,6 +239,7 @@
             android:fontFamily="@font/unbounded_light"
             android:background="@drawable/figure"
             android:text="Login"
+            android:textAllCaps="false"
             android:visibility="visible"
             android:textColor="@color/blackblue"
             android:textSize="18sp">
@@ -270,6 +274,7 @@
             android:fontFamily="@font/unbounded_light"
             android:background="@android:color/transparent"
             android:text="Sing up"
+            android:textAllCaps="false"
             android:visibility="visible"
             android:textColor="@color/blue"
             android:textSize="14sp">
