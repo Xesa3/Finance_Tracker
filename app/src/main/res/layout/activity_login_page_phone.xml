@@ -13,8 +13,7 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="102dp"
         android:layout_marginBottom="89dp"
         android:fontFamily="@font/unbounded_semibold"
@@ -24,7 +23,8 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Hello!" />
+        tools:text="Hello!"
+        tools:ignore="HardcodedText" />
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -51,6 +51,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@android:color/transparent"
+                android:contentDescription="correct answer_icon"
                 android:src="@mipmap/ic_launcher_foreground">
 
             </ImageView>
@@ -63,7 +64,8 @@
                 android:gravity="center"
                 android:text="Lotus track"
                 android:textColor="@color/very_white"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <LinearLayout
@@ -88,7 +90,8 @@
                 android:textAllCaps="false"
                 android:visibility="visible"
                 android:textColor="@color/blue"
-                android:textSize="18sp">
+                android:textSize="18sp"
+                tools:ignore="HardcodedText">
 
             </android.widget.Button>
 
@@ -105,7 +108,8 @@
                 android:textAllCaps="false"
                 android:visibility="visible"
                 android:textColor="@color/blackblue"
-                android:textSize="18sp">
+                android:textSize="18sp"
+                tools:ignore="HardcodedText">
 
             </android.widget.Button>
 
@@ -137,6 +141,7 @@
                 <ImageView
                     android:layout_width="28dp"
                     android:layout_height="28dp"
+                    android:contentDescription="correct answer_icon"
                     android:gravity="center"
                     android:src="@drawable/phone">
                 </ImageView>
@@ -155,7 +160,8 @@
                 android:hint="phone"
                 android:inputType="phone"
                 android:textColor="@color/blackblue"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
         </LinearLayout>
 
         <LinearLayout
@@ -183,6 +189,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:contentDescription="correct answer_icon"
                     android:src="@drawable/baseline_lock_24">
 
                 </ImageView>
@@ -200,7 +207,8 @@
                 android:inputType="textPassword"
                 android:textAlignment="viewStart"
                 android:textColor="@color/blackblue"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
 
             <android.widget.Button
                 android:layout_width="85dp"
@@ -214,7 +222,8 @@
                 android:textAllCaps="false"
                 android:textColor="@color/blackblue"
                 android:textSize="14sp"
-                android:visibility="visible">
+                android:visibility="visible"
+                tools:ignore="HardcodedText">
             </android.widget.Button>
 
 
@@ -242,7 +251,8 @@
             android:textAllCaps="false"
             android:visibility="visible"
             android:textColor="@color/blackblue"
-            android:textSize="18sp">
+            android:textSize="18sp"
+            tools:ignore="HardcodedText">
 
         </android.widget.Button>
 
@@ -264,7 +274,8 @@
             android:fontFamily="@font/unbounded_light"
             android:text="No account?"
             android:textColor="@color/very_white"
-            android:textSize="16sp">
+            android:textSize="16sp"
+            tools:ignore="HardcodedText">
 
         </TextView>
 
@@ -277,7 +288,8 @@
             android:textAllCaps="false"
             android:visibility="visible"
             android:textColor="@color/blue"
-            android:textSize="14sp">
+            android:textSize="14sp"
+            tools:ignore="HardcodedText">
 
         </Button>
     </LinearLayout>

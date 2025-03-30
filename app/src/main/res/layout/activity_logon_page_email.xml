@@ -14,11 +14,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="102dp"
         android:layout_marginBottom="89dp"
         android:fontFamily="@font/unbounded_semibold"
-        android:text="Hello!"
+        android:text="@string/hello"
         android:textColor="@color/very_white"
         android:textSize="64sp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout"
@@ -51,6 +50,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:background="@android:color/transparent"
+                android:contentDescription="correct answer_icon"
                 android:src="@mipmap/ic_launcher_foreground">
 
             </ImageView>
@@ -61,7 +61,7 @@
                 android:layout_marginStart="15dp"
                 android:fontFamily="@font/unbounded_light"
                 android:gravity="center"
-                android:text="Lotus track"
+                android:text="@string/lotus_track"
                 android:textColor="@color/very_white"
                 android:textSize="20sp" />
         </LinearLayout>
@@ -84,7 +84,7 @@
                 android:background="@drawable/verywind"
                 android:fontFamily="@font/unbounded_light"
                 android:gravity="center"
-                android:text="e-mail"
+                android:text="@string/e_mail_my"
                 android:textAllCaps="false"
                 android:textColor="@color/blackblue"
                 android:textSize="18sp"
@@ -102,7 +102,7 @@
                 android:background="@android:color/transparent"
                 android:gravity="center"
                 android:onClick="openLoginFragmentPhone"
-                android:text="phone"
+                android:text="@string/phone"
                 android:textAllCaps="false"
                 android:textColor="@color/blue"
                 android:textSize="18sp"
@@ -138,6 +138,7 @@
                 <ImageView
                     android:layout_width="28dp"
                     android:layout_height="28dp"
+                    android:contentDescription="correct answer_icon"
                     android:gravity="center"
                     android:src="@drawable/email">
 
@@ -155,7 +156,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/unbounded_light"
                 android:gravity="start"
-                android:hint="e-mail"
+                android:hint="@string/e_mail"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/blackblue"
                 android:textSize="18sp" />
@@ -186,6 +187,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:contentDescription="correct answer_icon"
                     android:src="@drawable/baseline_lock_24">
 
                 </ImageView>
@@ -200,7 +202,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/unbounded_light"
                 android:inputType="textPassword"
-                android:hint="password"
+                android:hint="@string/password_my"
                 android:textAlignment="viewStart"
                 android:textColor="@color/blackblue"
                 android:textSize="18sp" />
@@ -213,7 +215,7 @@
                 android:fontFamily="@font/unbounded_light"
                 android:background="@drawable/verywind"
                 android:backgroundTint="#D9D9D8"
-                android:text="Fogot"
+                android:text="@string/fogot"
                 android:textAllCaps="false"
                 android:textColor="@color/blackblue"
                 android:textSize="14sp"
@@ -241,7 +243,7 @@
             android:layout_marginHorizontal="18dp"
             android:fontFamily="@font/unbounded_light"
             android:background="@drawable/figure"
-            android:text="Login"
+            android:text="@string/login_my"
             android:textAllCaps="false"
             android:visibility="visible"
             android:textColor="@color/blackblue"
@@ -265,7 +267,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/unbounded_light"
-            android:text="No account?"
+            android:text="@string/no_account_my"
             android:textColor="@color/very_white"
             android:textSize="16sp">
 
@@ -276,7 +278,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/unbounded_light"
             android:background="@android:color/transparent"
-            android:text="Sing up"
+            android:text="@string/sing_up"
             android:textAllCaps="false"
             android:visibility="visible"
             android:textColor="@color/blue"

@@ -6,4 +6,14 @@
     <string name="login">Login</string>
     <string name="no_account">No account? </string>
     <string name="sign_up">Sign up</string>
+    <string name="phone">phone</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password_my">password</string>
+    <string name="fogot">Fogot</string>
+    <string name="login_my">Login</string>
+    <string name="no_account_my">No account?</string>
+    <string name="sing_up">Sing up</string>
+    <string name="e_mail_my">e-mail</string>
+    <string name="lotus_track">Lotus track</string>
+    <string name="hello">Hello!</string>
 </resources>
