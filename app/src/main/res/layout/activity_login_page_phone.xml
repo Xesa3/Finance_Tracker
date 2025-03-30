@@ -26,7 +26,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="400dp"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="89dp"
         android:background="@drawable/verynotwind"
@@ -63,16 +63,17 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="50dp"
             android:layout_marginStart="9dp"
             android:layout_marginEnd="9dp"
+            android:layout_marginBottom="50dp"
             android:background="@drawable/figure"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <Button
                 android:layout_width="170dp"
-                android:layout_height="36dp"
+                android:layout_height="42dp"
                 android:layout_marginStart="4dp"
                 android:background="@drawable/figure"
                 android:gravity="center_horizontal"
@@ -82,8 +83,9 @@
                 ></Button>
             <Button
                 android:layout_width="170dp"
-                android:layout_height="36dp"
-                android:layout_marginStart="4dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/figure"
                 android:backgroundTint="@android:color/transparent"
                 android:gravity="center_horizontal"
@@ -97,14 +99,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="42dp"
-            android:layout_marginTop="9dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"/>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="50dp"
             android:layout_marginStart="9dp"
             android:layout_marginTop="9dp"
             android:layout_marginEnd="9dp"
@@ -113,8 +108,8 @@
             android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
                 android:layout_marginHorizontal="4dp"
                 android:background="@drawable/figure"
                 android:backgroundTint="#D9D9D8"
@@ -132,22 +127,34 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="50dp"
             android:layout_marginStart="9dp"
             android:layout_marginTop="9dp"
             android:layout_marginEnd="9dp"
+
             android:layout_marginBottom="41dp"
             android:background="@drawable/figure"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
+
             <LinearLayout
-                android:layout_width="36dp"
-                android:layout_height="36dp"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
                 android:layout_marginHorizontal="4dp"
                 android:background="@drawable/figure"
                 android:backgroundTint="#D9D9D8"
-                android:gravity="center"></LinearLayout>
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/baseline_lock_24"
+                    android:backgroundTint="@color/blue"></ImageView>
+            </LinearLayout>
+
+            ></LinearLayout>
 
             <EditText
                 android:layout_width="wrap_content"
@@ -160,9 +167,9 @@
 
             <Button
                 android:layout_width="85dp"
-                android:layout_height="36dp"
+                android:layout_height="42dp"
                 android:layout_gravity="center_vertical"
-                android:layout_marginStart="114dp"
+                android:layout_marginStart="107dp"
                 android:layout_marginEnd="20dp"
                 android:background="@drawable/verywind"
 
