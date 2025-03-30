@@ -88,7 +88,7 @@
                 android:textAllCaps="false"
                 android:visibility="visible"
                 android:textColor="@color/blue"
-                android:textSize="14sp">
+                android:textSize="18sp">
 
             </android.widget.Button>
 
@@ -105,7 +105,7 @@
                 android:textAllCaps="false"
                 android:visibility="visible"
                 android:textColor="@color/blackblue"
-                android:textSize="14sp">
+                android:textSize="18sp">
 
             </android.widget.Button>
 
