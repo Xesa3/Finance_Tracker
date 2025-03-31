@@ -7,7 +7,7 @@
     android:background="@drawable/verynotwind"
     android:orientation="vertical"
     tools:context=".ui.fragments.Login.LoginFragmentEmail">
-    
+
     <LinearLayout
         android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
