@@ -33,7 +33,7 @@ public class LoginFragmentEmail extends Fragment {
 
 
 
-        return inflater.inflate(R.layout.fragment_logon_email, container, false);
+        return inflater.inflate(R.layout.fragment_login_email, container, false);
     }
 
 
