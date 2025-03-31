@@ -25,7 +25,7 @@ public class RegistrationPage extends AppCompatActivity {
 
 
     private RegisterViewModel registerViewModel;
-    private Button buttonSign;
+    private Button buttonLogin;
 
 
     @Override
@@ -41,14 +41,14 @@ public class RegistrationPage extends AppCompatActivity {
 
         registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
 
-        buttonSign = findViewById(R.id.buttonSign_up);
-        buttonSign.setEnabled(false); // Отключаю кнопку
+        buttonLogin = findViewById(R.id.buttonLogin_up);
+        buttonLogin.setEnabled(false); // Отключаю кнопку
 
         registerViewModel.getIsButtonEnabled().observe(this, isEnabled -> {
-            buttonSign.setEnabled(isEnabled); // Активируем кнопку, если данные введены
+            buttonLogin.setEnabled(isEnabled); // Активируем кнопку, если данные введены
         });
 
-        buttonSign.setOnClickListener(v -> { //Действия с активной кнопкой
+        buttonLogin.setOnClickListener(v -> { //Действия с активной кнопкой
             if (Boolean.TRUE.equals(registerViewModel.getIsButtonEnabled().getValue())) {
                 clickSign(v);
             }
@@ -68,7 +68,7 @@ public class RegistrationPage extends AppCompatActivity {
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager(); //Получаем фрагмент менеджер который управляет фрагментами
         FragmentTransaction transaction = fragmentManager.beginTransaction(); //начинаем операцию замены фрагмента
-        transaction.replace(R.id.container2, fragment); // заменяет текущий фрагмент в container1 на заданный fragment
+        transaction.replace(R.id.container1, fragment); // заменяет текущий фрагмент в container1 на заданный fragment
         transaction.commit(); // Применяет замену
     }
 

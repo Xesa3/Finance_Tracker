@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <android.widget.Button
             android:id="@+id/buttonLogin"
@@ -48,7 +48,7 @@
         tools:text="Hello!" />
 
     <FrameLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/container1"
         android:layout_width="370dp"
         android:layout_height="400dp"
         android:layout_marginHorizontal="18dp"
@@ -71,7 +71,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/container1">
 
         <TextView
             android:id="@+id/textViewNoAccount"
