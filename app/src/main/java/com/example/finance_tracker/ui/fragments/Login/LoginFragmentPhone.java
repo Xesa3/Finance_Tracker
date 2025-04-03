@@ -47,6 +47,7 @@ public class LoginFragmentPhone extends Fragment {
         textPhone = view.findViewById(R.id.editTextPhone);
         textPassword = view.findViewById(R.id.editTextPasswordLogin);
 
+
         //addTextChangedListener метод который позволяет отслеживать действия с полями для ввода
         textPhone.addTextChangedListener(new TextWatcher() {
             @Override
@@ -78,8 +79,8 @@ public class LoginFragmentPhone extends Fragment {
 
     }
 
-    public void onPause() {
-        super.onPause();
+    public void onDestroyView() {
+        super.onDestroyView();
         // Сбрасываем состояние кнопки при уходе с фрагмента
         loginViewModel.resetButtonState();
     }

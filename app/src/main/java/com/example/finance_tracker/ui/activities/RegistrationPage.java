@@ -1,6 +1,8 @@
 package com.example.finance_tracker.ui.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 
@@ -44,18 +46,16 @@ public class RegistrationPage extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin_up);
         buttonLogin.setEnabled(false); // Отключаю кнопку
 
+
         registerViewModel.getIsButtonEnabled().observe(this, isEnabled -> {
             buttonLogin.setEnabled(isEnabled); // Активируем кнопку, если данные введены
+            if (isEnabled) {
+                buttonLogin.getBackground().clearColorFilter(); // Очищаем затемнение
+            } else {
+                buttonLogin.getBackground().setColorFilter(Color.parseColor("#66bab8b6"), PorterDuff.Mode.MULTIPLY); // Затемняем
+            }
         });
 
-        buttonLogin.setOnClickListener(v -> { //Действия с активной кнопкой
-            if (Boolean.TRUE.equals(registerViewModel.getIsButtonEnabled().getValue())) {
-                clickSign(v);
-            }
-            else {
-                Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         //Загрузка фрагмента с логином
         if (savedInstanceState == null) {
