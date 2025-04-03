@@ -48,6 +48,7 @@ public class LoginFragmentEmail extends Fragment {
         EditText textEmail = view.findViewById(R.id.editTextEmailAddressLogin);
         EditText textPassword = view.findViewById(R.id.editTextPasswordLogin);
 
+
         textEmail.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -76,8 +77,8 @@ public class LoginFragmentEmail extends Fragment {
 
     }
 
-    public void onPause() {
-        super.onPause();
+    public void onDestroyView() {
+        super.onDestroyView();
         // Сбрасываем состояние кнопки при уходе с фрагмента
         loginViewModel.resetButtonState();
     }
