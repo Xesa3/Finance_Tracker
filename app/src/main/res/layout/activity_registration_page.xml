@@ -11,7 +11,7 @@
 
     <FrameLayout
         android:id="@+id/container1"
-        android:layout_width="370dp"
+        android:layout_width="348dp"
         android:layout_height="400dp"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="89dp"
@@ -76,14 +76,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/unbounded_light"
-            android:text="@string/no_account_ema"
+            android:text="@string/do_you_heva_account_ema"
             android:textAlignment="center"
             android:textColor="@color/very_white"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2"></TextView>
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+        </TextView>
 
         <Button
             android:id="@+id/buttonSign_up"
@@ -92,7 +94,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/unbounded_light"
             android:onClick="clickSign_in"
-            android:text="@string/sing_up_ema"
+            android:text="@string/sing_in"
             android:textAllCaps="false"
             android:textColor="@color/blue"
             android:textSize="14sp"

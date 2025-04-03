@@ -28,7 +28,9 @@
             android:textAllCaps="false"
             android:textColor="@color/blackblue"
             android:textSize="18sp"
-            android:visibility="visible"></android.widget.Button>
+            android:visibility="visible">
+
+        </android.widget.Button>
     </LinearLayout>
 
 
@@ -48,7 +50,7 @@
 
     <FrameLayout
         android:id="@+id/container1"
-        android:layout_width="370dp"
+        android:layout_width="348dp"
         android:layout_height="400dp"
         android:layout_marginHorizontal="18dp"
         android:layout_marginTop="89dp"
