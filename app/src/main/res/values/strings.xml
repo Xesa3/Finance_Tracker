@@ -30,4 +30,6 @@
     <string name="confirm_password">confirm password</string>
     <string name="do_you_heva_account_ema">Do you heva account?</string>
     <string name="sing_in">Sing in</string>
+    <string name="enter_code">enter code</string>
+    <string name="next">Next</string>
 </resources>
