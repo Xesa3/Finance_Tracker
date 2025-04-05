@@ -80,9 +80,7 @@ public class RegistrationPage extends AppCompatActivity {
 
     //Надо определится куда потом пользователя кидать
     //Логиниться или данные запоминаются и он автоматически логинится
-    public void clickSign(View view){
-        Intent intent = new Intent(this, HomePage.class);
-        startActivity(intent);
-        finish();
-    }
+
+
+
 }
