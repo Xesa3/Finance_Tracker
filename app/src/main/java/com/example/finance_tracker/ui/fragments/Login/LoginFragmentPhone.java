@@ -1,5 +1,6 @@
 package com.example.finance_tracker.ui.fragments.Login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,7 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.finance_tracker.R;
+import com.example.finance_tracker.ui.activities.Return_password;
 
 
 public class LoginFragmentPhone extends Fragment {
@@ -37,6 +39,9 @@ public class LoginFragmentPhone extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+
+        Button fogotPhone = view.findViewById(R.id.fogotPhone);
+        fogotPhone.setOnClickListener(v -> clickFogot());
 
         //инициализация кнопки и обработка события при нажатии на нее для перехода на email
         Button emailButton = view.findViewById(R.id.buttonEmail);
@@ -101,6 +106,12 @@ public class LoginFragmentPhone extends Fragment {
         //Добавляем новый фрагмент email
         transaction.add(R.id.container1, emailFragment);
         transaction.commit();
+    }
+
+    public void clickFogot(){
+        Intent intent = new Intent(getActivity(), Return_password.class);
+        startActivity(intent);
+
     }
 
 
