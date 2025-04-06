@@ -24,7 +24,7 @@
             android:layout_marginTop="9dp"
             android:background="@android:color/transparent"
             android:fontFamily="@font/unbounded_light"
-            android:text="@string/return_plus_activ"
+            android:text="@string/return_plus_"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="18sp"

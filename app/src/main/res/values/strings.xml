@@ -41,4 +41,5 @@
     <string name="plus">доходы</string>
     <string name="mines">расходы</string>
     <string name="move">переводы</string>
+    <string name="return_plus_">назад</string>
 </resources>
