@@ -40,7 +40,7 @@
             android:background="@android:color/transparent"
             android:fontFamily="@font/unbounded_light"
             android:gravity="center"
-            android:text="добавить"
+            android:text="@string/add_plus_add"
             android:textColor="@color/white"
             android:textSize="18sp">
 
