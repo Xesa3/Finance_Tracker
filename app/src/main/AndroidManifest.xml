@@ -16,7 +16,7 @@
             android:name=".activity_move"
             android:exported="false" />
         <activity
-            android:name=".activity_mines"
+            android:name=".ui.activities.LoginPage"
             android:exported="false" />
         <activity
             android:name=".activity_plus"
@@ -28,7 +28,7 @@
             android:name=".ui.activities.RegistrationPage"
             android:exported="false" />
         <activity
-            android:name=".ui.activities.LoginPage"
+            android:name=".activity_mines"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
