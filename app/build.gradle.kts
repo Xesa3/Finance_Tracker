@@ -32,6 +32,20 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    packaging {
+        resources {
+            excludes.addAll(
+                listOf(
+                    "META-INF/DEPENDENCIES",
+                    "META-INF/NOTICE",
+                    "META-INF/LICENSE",
+                    "META-INF/LICENSE.txt",
+                    "META-INF/NOTICE.txt"
+                )
+            )
+        }
+    }
+
 }
 
 dependencies {
@@ -44,6 +58,13 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.legacy.support.v4)
+
+    implementation(libs.jackson)
+    implementation(libs.httpclient5)
+    implementation(libs.httpcore5)
+    implementation(libs.zxing)
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)

@@ -2,6 +2,14 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Разрешение на использование камеры -->
+    <uses-permission android:name="android.permission.CAMERA"/>
+
+    <!-- Указываем, что камера не является обязательной для работы приложения -->
+    <uses-feature android:name="android.hardware.camera" android:required="false"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Finance_Tracker"
         tools:targetApi="31">
+
+
         <activity
             android:name=".activity_move"
             android:exported="false" />
@@ -40,5 +50,7 @@
             android:name=".ui.activities.HomePage"
             android:exported="false" />
     </application>
+
+
 
 </manifest>

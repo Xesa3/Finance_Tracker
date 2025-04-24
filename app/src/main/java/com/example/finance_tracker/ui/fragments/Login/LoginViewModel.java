@@ -13,7 +13,7 @@ public class LoginViewModel extends ViewModel {
 
     private final MutableLiveData<String> userLogin = new MutableLiveData<>();
     private final MutableLiveData<String> userPassword = new MutableLiveData<>();
-    private final MutableLiveData<Boolean> isButtonEnabled = new MutableLiveData<>(false);
+    private final MutableLiveData<Boolean> isButtonEnabled = new MutableLiveData<>(true);
     public void setUserLogin(String mail){
         userLogin.setValue(mail);
         validateData();
