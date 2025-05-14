@@ -75,7 +75,7 @@
         <android.widget.Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
-            android:layout_height="42dp"
+            android:layout_height="44dp"
             android:layout_marginStart="4dp"
             android:background="@drawable/verywind"
             android:fontFamily="@font/unbounded_light"
@@ -113,7 +113,7 @@
 
         <android.widget.Button
 
-            android:id="@+id/button5"
+            android:id="@+id/button555"
             android:layout_width="wrap_content"
             android:layout_height="42dp"
             android:layout_marginEnd="9dp"
@@ -134,148 +134,134 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <HorizontalScrollView
         android:layout_width="match_parent"
-        android:layout_height="110dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginStart="9dp"
+        android:layout_height="wrap_content"
+        android:paddingVertical="8dp"
+        android:scrollbars="none"
         android:layout_marginTop="60dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
+            <LinearLayout
+                android:id="@+id/button_container"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+                    <android.widget.Button
+                        android:id="@+id/button3"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/krug"
+                        android:visibility="visible"
+                        android:text="+"
+                        android:textSize="35sp"
+                        android:fontFamily="@font/unbounded_light"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackblue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-            <android.widget.Button
-                android:id="@+id/button3"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="1dp"
+                    <TextView
+                        android:id="@+id/textView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/unbounded_light"
+                        android:gravity="center"
+                        android:text="зарплата"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintEnd_toEndtOf="@+id/button3"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/button3"></TextView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                android:background="@drawable/krug"
-                android:gravity="center"
-                android:visibility="visible"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                    <android.widget.Button
+                        android:id="@+id/button4"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/krug"
+                        android:gravity="center"
+                        android:text="+"
+                        android:textSize="35sp"
+                        android:fontFamily="@font/unbounded_light"
 
-            </android.widget.Button>
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackblue"
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/unbounded_light"
-                android:gravity="center"
-                android:text="зарплата"
-                android:textColor="@color/white"
-                android:textSize="14sp"
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/unbounded_light"
+                        android:gravity="center"
+                        android:text="подработка"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@+id/button4"
+                        app:layout_constraintEnd_toEndtOf="@+id/button4"
+                        app:layout_constraintStart_toStartOf="@+id/button4"
+                        app:layout_constraintTop_toBottomOf="@+id/button4"></TextView>
 
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button3">
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal">
 
-            </TextView>
+                    <android.widget.Button
+                        android:id="@+id/button5"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/krug"
+                        android:text="+"
+                        android:textSize="35sp"
+                        android:fontFamily="@font/unbounded_light"
+                        android:gravity="center"
+                        android:textAllCaps="true"
+                        android:textColor="@color/blackblue"
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+                        android:visibility="visible"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="@font/unbounded_light"
+                        android:gravity="center"
+                        android:text="другое"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="@+id/button5"
+                        app:layout_constraintEnd_toEndtOf="@+id/button5"
+                        app:layout_constraintStart_toStartOf="@+id/button5"
+                        app:layout_constraintTop_toBottomOf="@+id/button5"></TextView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout5"
-            app:layout_constraintStart_toEndOf="@+id/constraintLayout3"
-            app:layout_constraintTop_toTopOf="parent">
 
-            <android.widget.Button
-                android:id="@+id/button4"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="1dp"
 
-                android:background="@drawable/krug"
-                android:gravity="center"
-                android:visibility="visible"
 
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </android.widget.Button>
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/unbounded_light"
-                android:gravity="center"
-                android:text="подработка"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button4">
-
-            </TextView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:layout_marginEnd="9dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-
-            app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintTop_toTopOf="parent">
-
-            <android.widget.Button
-                android:id="@+id/button6"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginTop="1dp"
-
-                android:background="@drawable/krug"
-                android:gravity="center"
-                android:visibility="visible"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </android.widget.Button>
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/unbounded_light"
-                android:gravity="center"
-                android:text="другое"
-                android:textColor="@color/white"
-                android:textSize="14sp"
-
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/button6">
-
-            </TextView>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+    </HorizontalScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
