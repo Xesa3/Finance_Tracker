@@ -44,6 +44,8 @@ public class LoginViewModel extends ViewModel {
         isButtonEnabled.setValue(valid);
     }
     public void resetButtonState() {
+        userLogin.setValue("");  // Очистка логина
+        userPassword.setValue(""); // Очистка пароля
         isButtonEnabled.setValue(false);  // Сбрасываем кнопку на неактивную
     }
 

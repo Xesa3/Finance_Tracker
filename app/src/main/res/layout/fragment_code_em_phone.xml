@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="348dp"
+    android:layout_height="400dp"
+    android:background="@drawable/verynotwind"
+    android:orientation="vertical"
+    tools:context=".BlankFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/verynotwind"
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginStart="9dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="9dp">
+
+        <ImageView
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="correct answer_icon"
+            android:src="@mipmap/ic_launcher_foreground">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/unbounded_light"
+            android:gravity="center"
+            android:text="@string/lotus_track_em"
+            android:textColor="@color/very_white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout6"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/figure"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="9dp">
+
+        <LinearLayout
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/figure"
+            android:backgroundTint="#D9D9D8"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="correct answer_icon"
+                android:gravity="center"
+                android:src="@drawable/phone">
+
+            </ImageView>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextPhoneReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/unbounded_light"
+            android:gravity="start"
+            android:hint="@string/phone_ema"
+            android:inputType="phone"
+            android:textColor="@color/blackblue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginBottom="9dp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/unbounded_light"
+        android:text="@string/or"
+        android:textColor="@color/very_white"
+        android:textSize="20sp">
+
+    </TextView>
+    <LinearLayout
+
+        android:id="@+id/linearLayout7"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="94dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginEnd="9dp"
+        android:background="@drawable/figure"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginHorizontal="4dp"
+            android:background="@drawable/figure"
+            android:backgroundTint="#D9D9D8"
+            android:gravity="center">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:contentDescription="correct answer_icon"
+                android:gravity="center"
+                android:src="@drawable/email">
+
+
+            </ImageView>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/editTextEmailAddressReturn"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/unbounded_light"
+            android:gravity="start"
+            android:hint="@string/e_mail"
+            android:inputType="textEmailAddress"
+            android:textColor="@color/blackblue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
+
+</FrameLayout>

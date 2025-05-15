@@ -1,6 +1,8 @@
 package com.example.finance_tracker.ui.activities;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.view.View;
 
@@ -25,7 +27,7 @@ public class RegistrationPage extends AppCompatActivity {
 
 
     private RegisterViewModel registerViewModel;
-    private Button buttonSign;
+    private Button buttonLogin;
 
 
     @Override
@@ -41,21 +43,19 @@ public class RegistrationPage extends AppCompatActivity {
 
         registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
 
-        buttonSign = findViewById(R.id.buttonSign_up);
-        buttonSign.setEnabled(false); // Отключаю кнопку
+        buttonLogin = findViewById(R.id.buttonLogin_up);
+        buttonLogin.setEnabled(false); // Отключаю кнопку
+
 
         registerViewModel.getIsButtonEnabled().observe(this, isEnabled -> {
-            buttonSign.setEnabled(isEnabled); // Активируем кнопку, если данные введены
+            buttonLogin.setEnabled(isEnabled); // Активируем кнопку, если данные введены
+            if (isEnabled) {
+                buttonLogin.getBackground().clearColorFilter(); // Очищаем затемнение
+            } else {
+                buttonLogin.getBackground().setColorFilter(Color.parseColor("#66bab8b6"), PorterDuff.Mode.MULTIPLY); // Затемняем
+            }
         });
 
-        buttonSign.setOnClickListener(v -> { //Действия с активной кнопкой
-            if (Boolean.TRUE.equals(registerViewModel.getIsButtonEnabled().getValue())) {
-                clickSign(v);
-            }
-            else {
-                Toast.makeText(this, "Заполните все поля", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         //Загрузка фрагмента с логином
         if (savedInstanceState == null) {
@@ -68,7 +68,7 @@ public class RegistrationPage extends AppCompatActivity {
     private void loadFragment(Fragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager(); //Получаем фрагмент менеджер который управляет фрагментами
         FragmentTransaction transaction = fragmentManager.beginTransaction(); //начинаем операцию замены фрагмента
-        transaction.replace(R.id.container2, fragment); // заменяет текущий фрагмент в container1 на заданный fragment
+        transaction.replace(R.id.container1, fragment); // заменяет текущий фрагмент в container1 на заданный fragment
         transaction.commit(); // Применяет замену
     }
 
@@ -80,9 +80,7 @@ public class RegistrationPage extends AppCompatActivity {
 
     //Надо определится куда потом пользователя кидать
     //Логиниться или данные запоминаются и он автоматически логинится
-    public void clickSign(View view){
-        Intent intent = new Intent(this, HomePage.class);
-        startActivity(intent);
-        finish();
-    }
+
+
+
 }

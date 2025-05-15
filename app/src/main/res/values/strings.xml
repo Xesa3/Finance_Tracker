@@ -1,14 +1,45 @@
 <resources>
-    <string name="app_name">Lotus tracker</string>
-    <!-- Strings related to login -->
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome!"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="app_name">Lotus Track</string>
+    <string name="email">e-mail</string>
+    <string name="password">password</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="login">Login</string>
+    <string name="no_account">No account? </string>
+    <string name="sign_up">Sign up</string>
+    <string name="phone">phone</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password_my">password</string>
+    <string name="fogot">Fogot</string>
+    <string name="login_my">Login</string>
+    <string name="no_account_my">No account?</string>
+    <string name="sing_up">Sing up</string>
+    <string name="e_mail_my">e-mail</string>
+    <string name="lotus_track">Lotus track</string>
+    <string name="hello">Hello!</string>
+    <string name="hello_em">Hello!</string>
+    <string name="lotus_track_em">Lotus track</string>
+    <string name="e_mail_em">e-mail</string>
+    <string name="phone_em">phone</string>
+    <string name="phone_ema">phone</string>
+    <string name="password_ema">password</string>
+    <string name="fogot_em">Fogot</string>
+    <string name="login_ema">Login</string>
+    <string name="no_account_ema">No account?</string>
+    <string name="sing_up_ema">Sing up</string>
+    <string name="or">or</string>
+    <string name="confirm_password">confirm password</string>
+    <string name="do_you_heva_account_ema">Do you heva account?</string>
+    <string name="sing_in">Sing in</string>
+    <string name="enter_code">enter code</string>
+    <string name="next">Next</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="return_plus">return</string>
+    <string name="add_plus">ADD</string>
+    <string name="return_plus_activ">назад</string>
+    <string name="plus">доходы</string>
+    <string name="mines">расходы</string>
+    <string name="move">переводы</string>
+    <string name="return_plus_">назад</string>
+    <string name="add_plus_add">добавить</string>
 </resources>

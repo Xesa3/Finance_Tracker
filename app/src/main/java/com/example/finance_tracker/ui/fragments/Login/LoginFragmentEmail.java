@@ -1,5 +1,6 @@
 package com.example.finance_tracker.ui.fragments.Login;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,9 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.finance_tracker.R;
+import com.example.finance_tracker.ui.activities.HomePage;
+import com.example.finance_tracker.ui.activities.RegistrationPage;
+import com.example.finance_tracker.ui.activities.Return_password;
 
 
 //В классе LoginFragmentEmail оставил все комментари кто за что отвечает тут меняется тольно коле textphone на textEmail
@@ -31,8 +35,6 @@ public class LoginFragmentEmail extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-
-
         return inflater.inflate(R.layout.fragment_login_email, container, false);
     }
 
@@ -40,6 +42,10 @@ public class LoginFragmentEmail extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState){
         super.onViewCreated(view, savedInstanceState);
+
+        Button fogotButton = view.findViewById(R.id.fogotEmail);
+        fogotButton.setOnClickListener(v -> clickFogot());
+
         Button phoneButton = view.findViewById(R.id.buttonPhone);
         phoneButton.setOnClickListener(v -> openLoginFragmentPhone()); //Открывает фрагмент с полем для логина через телефон
 
@@ -49,6 +55,7 @@ public class LoginFragmentEmail extends Fragment {
 
         EditText textEmail = view.findViewById(R.id.editTextEmailAddressLogin);
         EditText textPassword = view.findViewById(R.id.editTextPasswordLogin);
+
 
         textEmail.addTextChangedListener(new TextWatcher() {
             @Override
@@ -78,8 +85,8 @@ public class LoginFragmentEmail extends Fragment {
 
     }
 
-    public void onPause() {
-        super.onPause();
+    public void onDestroyView() {
+        super.onDestroyView();
         // Сбрасываем состояние кнопки при уходе с фрагмента
         loginViewModel.resetButtonState();
     }
@@ -96,6 +103,12 @@ public class LoginFragmentEmail extends Fragment {
 
         transaction.add(R.id.container1, phoneFragment);
         transaction.commit();
+    }
+
+    public void clickFogot(){
+        Intent intent = new Intent(getActivity(), Return_password.class);
+        startActivity(intent);
+
     }
 
 

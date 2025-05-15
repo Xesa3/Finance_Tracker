@@ -33,7 +33,10 @@ android {
         viewBinding = true
     }
 }
-
+repositories{
+    google()
+    mavenCentral()
+}
 dependencies {
 
     implementation(libs.appcompat)
